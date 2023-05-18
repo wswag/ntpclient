@@ -1,0 +1,25 @@
+{
+  "name": "ntp-client",
+  "version": "1.0.0",
+  "description": "library fork of Fabrice Weinberg's NTP library, adding full latency correction",
+  "keywords": "ntp, client, arduino, time",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/wswag/ntp-client.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Wolfgang Sebastian Wagner",
+      "email": "sewagn@gmail.com",
+      "url": ""
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wswag",
+  "dependencies": {
+  },
+  "frameworks": "*",
+  "platforms": "*"
+}
