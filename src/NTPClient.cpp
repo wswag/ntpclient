@@ -25,7 +25,6 @@
  */
 
 #include "NTPClient.h"
-#include <PulseGen.h>
 
 #pragma pack(1)
 
@@ -117,12 +116,12 @@ bool NTPClient::forceUpdate() {
   // Wait till data is there or timeout...
   
   int cb = 0;
-  PulseGen timeout(1000, false);
+  uint32_t t0 = millis();
   timeout.Reset();
   do {
     yield();
     cb = this->_udp->parsePacket();
-  } while (cb == 0 && !timeout.Pulse());
+  } while (cb == 0 && !(millis() - t0 > 1000));
 
   if (timeout.Pulse())
     return false; // timeout
