@@ -1,5 +1,5 @@
 {
-  "name": "ntp-client",
+  "name": "ntpclient",
   "version": "1.0.0",
   "description": "library fork of Fabrice Weinberg's NTP library, adding full latency correction",
   "keywords": "ntp, client, arduino, time",
