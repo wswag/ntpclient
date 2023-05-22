@@ -117,13 +117,12 @@ bool NTPClient::forceUpdate() {
   
   int cb = 0;
   uint32_t t0 = millis();
-  timeout.Reset();
   do {
     yield();
     cb = this->_udp->parsePacket();
   } while (cb == 0 && !(millis() - t0 > 1000));
 
-  if (timeout.Pulse())
+  if (millis() - t0 > 1000)
     return false; // timeout
 
   // save current time and millis() of update
